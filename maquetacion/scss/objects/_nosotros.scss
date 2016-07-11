@@ -1,0 +1,377 @@
+/*------------------------------------*\
+$NOSOTROS
+\*------------------------------------*/
+.no-touch {
+    .item__nosotros {
+        .item__nosotros__text {
+            .btn {
+                transition: all 300ms;
+                &:hover {
+                    background: $main;
+                    color: white;
+                }
+            }
+        }
+    }
+    .item__nosotros__mail {
+        transition: all 300ms;
+        &:hover {
+            color: $main;
+        }
+    }
+}
+.wrap--nosotros {
+    max-width: 100%;
+    @include respond-to(tablet) {
+        padding: 0 2px;
+    }
+}
+.nosotros {
+    .content {
+        @include respond-to(tablet) {
+            padding-top: 23px;
+            width: 480px;
+            margin: auto;
+            padding-bottom: 20px;
+            @include respond-to(desktop) {
+                width: 540px;
+                padding-bottom: 27px;
+            }
+        }
+        p {
+            @include font-size(18px, 26px);
+            @extend .light;
+            margin-bottom: 0;
+            @include respond-to(tablet) {
+                @include font-size(18px, 26px);
+                text-align: center;
+            }
+            @include respond-to(desktop) {
+                @include font-size(18px, 28px);
+            }
+        }
+        .title {
+            margin-bottom: 10px;
+            @include respond-to(tablet) {
+                margin-bottom: 13px;
+            }
+            @include respond-to(desktop) {
+                margin-top: 27px;
+            }
+        }
+    }
+}
+.nosotros--container {
+    display: flex;
+    flex-flow: row wrap;
+    max-width: 1280px;
+    margin: auto;
+    justify-content: center;
+}
+.item__nosotros {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    padding-top: 17px;
+    @include respond-to(tablet) {
+        width: (100% / 3);
+        padding: 0 2px;
+        margin: 2px 0;
+    }
+    @include respond-to(desktop) {
+        width: 25%;
+        &:hover {
+            .item__nosotros__text {
+                opacity: 1;
+                .item__nosotros__container {
+                    top: 0;
+                }
+            }
+        }
+    }
+    .item__nosotros__image {
+        width: 100%;
+        img {
+            width: 100%;
+        }
+    }
+    .item__nosotros__text {
+        position: absolute;
+        top: calc(100% - 44px);
+        left: 0;
+        width: 100%;
+        height: calc(100% - 17px);
+        padding: 12px 10px;
+        background: rgba($darkblue, .9);
+        transition: all 300ms;
+        color: white;
+        @include respond-to(tablet) {
+            width: calc(100% - 4px);
+            height: 100%;
+            left: 2px;
+        }
+        @include respond-to(desktop) {
+            top: 0;
+            height: 100%;
+            opacity: 0;
+            padding: 20px;
+            transition: all 500ms;
+        }
+        &.open {
+            top: 17px;
+            @include respond-to(tablet) {
+                top: 0;
+            }
+            .accordeon {
+                span {
+                    &::after {
+                        content: '-';
+                        margin-left: 3px;
+                        font-size: 30px;
+                        line-height: 20px;
+                    }
+                }
+            }
+        }
+        .item__nosotros__container {
+            @include respond-to(desktop) {
+                padding: 20px;
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                transition: all 300ms;
+            }
+        }
+        .accordeon {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            width: 25px;
+            height: 24px;
+            cursor: pointer;
+            color: white;
+            @include font-size(24px, 24px);
+            text-align: center;
+            @include respond-to(desktop) {
+                display: none;
+            }
+            &.brackets {
+                &::after, &::before {
+                    background-size: 9px 24px;
+                }
+            }
+            span {
+                margin-left: -2px;
+                @include respond-to(tablet) {
+                    display: block;
+                }
+                &::after {
+                    content: '+';
+                    @include respond-to(tablet) {
+                        font-size: 20px;
+                        line-height: 23px;
+                        height: 24px;
+                        display: block;
+                        margin-left: 2px;
+                    }
+                }
+            }
+        }
+        .item__nosotros__name {
+            @include font-size(15px, 16px);
+            text-transform: uppercase;
+            color: $main;
+            margin-bottom: 15px;
+            @include respond-to(desktop) {
+                @include font-size(18px, 18px);
+                margin-bottom: 1px;
+            }
+        }
+        .item__nosotros__content {
+            @include font-size(15px, 18px);
+            @include respond-to(desktop) {
+                @include font-size(16px, 22px);
+            }
+            .item__nosotros__cargo {
+                @include font-size(13px, 14px);
+                margin-bottom: 7px;
+                display: block;
+                @include respond-to(desktop) {
+                    @include font-size(14px, 16px);
+                    margin-bottom: 20px;
+                }
+            }
+        }
+        .btn {
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            @include font-size(16px, 36px);
+            @include respond-to(tablet) {
+                bottom: 20px;
+                left: 20px;
+            }
+        }
+    }
+}
+.item__nosotros__mail {
+    display: flex;
+    flex-flow: row wrap;
+    color: white;
+    height: 24px;
+    @include font-size(13px, 24px);
+    margin-top: 12px;
+    @include respond-to(desktop) {
+        @include font-size(14px, 24px);
+        margin-top: 15px;
+    }
+    span {
+        margin-right: 4px;
+    }
+    .brackets {
+        &::after, &::before {
+            background-size: 6px 24px;
+        }
+    }
+    svg {
+        width: 12px;
+        height: 10px;
+        fill: $main;
+        margin-left: -2px;
+    }
+}
+.team {
+    .share {
+        @include respond-to(tablet) {
+            margin-bottom: 22px;
+        }
+        @include respond-to(desktop) {
+            margin-bottom: 39px;
+        }
+    }
+    .block--flex {
+        display: flex;
+        flex-flow: row wrap;
+        @include respond-to(tablet) {
+            max-width: 620px;
+            margin: auto;
+            padding: 0 8px 0 7px;
+        }
+        @include respond-to(desktop) {
+            max-width: 960px;
+        }
+        .column {
+            width: 100%;
+            @include respond-to(tablet) {
+                &.last {
+                    flex: 1;
+                    padding-left: 17px;
+                }
+            }
+            @include respond-to(desktop) {
+                &.last {
+                    flex: 1;
+                    padding-left: 24px;
+                }
+            }
+            &.first {
+                border-bottom: 1px solid rgba($principal, .2);
+                margin-bottom: 15px;
+                padding-bottom: 15px;
+                @include respond-to(tablet) {
+                    width: 232px;
+                    border-bottom: none;
+                }
+                @include respond-to(desktop) {
+                    width: 364px;
+                }
+            }
+            .content {
+                @include respond-to(tablet) {
+                    position: relative;
+                    top: -6px;
+                }
+                strong {
+                    color: $darkblue;
+                    @include font-size(18px, 26px);
+                    margin-bottom: 25px;
+                    font-weight: normal;
+                    @include respond-to(desktop) {
+                        @include font-size(18px, 28px);
+                    }
+                }
+                p {
+                    @include font-size(15px, 18px);
+                    margin-bottom: 18px;
+                    @include respond-to(desktop) {
+                        @include font-size(16px, 26px);
+                    }
+                }
+                h2 {
+                    @include font-size(17px, 20px);
+                    color: $darkblue;
+                    font-weight: normal;
+                    padding-top: 9px;
+                    margin-bottom: 4px;
+                    @include respond-to(tablet) {
+                        margin-bottom: 13px;
+                    }
+                    @include respond-to(desktop) {
+                        @include font-size(21px, 32px);
+                    }
+                }
+                ul {
+                    li {
+                        padding-left: 16px; 
+                        text-indent: 0px;
+                        position: relative;
+                        margin-bottom: 10px;
+                        @include font-size(15px, 18px);
+                        @include respond-to(desktop) {
+                            @include font-size(16px, 22px);
+                        }
+                        &:before {
+                            width: 6px;
+                            height: 6px;
+                            background: $darkblue; 
+                            position: absolute;
+                            left: 0px;
+                            top: 6px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .team__cargo {
+        @include font-size(14px, 16px);
+        margin-top: 8px;
+        text-transform: uppercase;
+        color: #5d6268;
+        @include respond-to(tablet) {
+            text-align: center;
+            margin: 11px auto 13px;
+        }
+        @include respond-to(desktop) {
+            margin: 8px auto 40px;
+        }
+    }
+    .team__image {
+        margin-bottom: 7px;
+        img {
+            width: 100%;
+        }
+    }
+    .team__extract {
+        color: $gray;
+        @include font-size(15px, 18px);
+        @include respond-to(desktop) {
+            @include font-size(16px, 22px);
+        }
+    }
+    .item__nosotros__mail {
+        color: $principal;
+    }
+}

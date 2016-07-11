@@ -1,0 +1,154 @@
+/*------------------------------------*\
+$MAIN
+\*------------------------------------*/
+.log {
+    position: absolute;
+    top: 0;
+    left: 0;
+    //background: url(../views/desktop/contacto.jpg) center top no-repeat red;
+    opacity: .4;
+    z-index: 9999;
+    width: 100%;
+    height: 5000px;
+    display: none;
+}
+html, body {
+    height: 100%;
+    color: $principal;
+    min-height: 100%;
+    //max-width: 1280px;
+    //margin: auto;
+    font-family: 'Roboto', sans-serif;
+}
+.noscroll {
+    overflow: hidden;
+}
+.mobile-only {
+    display: block;
+    @include respond-to(tablet) {
+        display: none !important;
+    }
+}
+.no-mobile {
+    display: none;
+    @include respond-to(tablet) {
+        display: block;
+    }
+}
+.fix__footer {
+    min-height: 100%;
+    margin-bottom: -215px;/* equal to Footer height */
+    @include respond-to(tablet) {
+        margin-bottom: -141px;/* equal to Footer height */
+    }
+    @include respond-to(desktop) {
+        margin-bottom: -111px;/* equal to Footer height */
+    }
+    &::after {
+        content: "";
+        display: block;
+    }
+}
+.footer, .fix__footer::after {
+    height: 215px;
+    @include respond-to(tablet) {
+        height: 141px;
+    }
+    @include respond-to(desktop) {
+        height: 111px;
+    }
+}
+.brackets {
+    position: relative;
+    padding: 0 8px;
+    &.show {
+        &::after, &::before {
+            opacity: 1;
+        }
+    }
+    &::after, &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        background: url(../img/bracket-left.svg) no-repeat;
+        background-size: 6px 17px;
+        width: 8px;
+        opacity: 0;
+        transition: all 300ms;
+    }
+    &::after {
+        left: auto;
+        right: 0;
+        background-image: url(../img/bracket-right.svg);
+    }
+}
+.title {
+    @include font-size(22px, 24px);
+    @extend .light;
+    text-align: left;
+    margin-top: 30px;
+    color: $darkblue;
+    @include respond-to(tablet) {
+        text-align: center;
+        @include font-size(28px, 32px);
+    }
+    @include respond-to(desktop) {
+        @include font-size(36px, 46px);
+    }
+}
+.sub-title {
+    @include font-size(17px, 48px);
+}
+strong {
+    @extend .bold;
+}
+img {
+    max-width: 100%;
+}
+.content {
+    strong {
+        color: $darkblue;
+        @include font-size(18px, 26px);
+        margin-bottom: 25px;
+        font-weight: normal;
+        @include respond-to(desktop) {
+            @include font-size(18px, 28px);
+        }
+    }
+    p {
+        @include font-size(15px, 18px);
+        margin-bottom: 25px;
+        @include respond-to(desktop) {
+            @include font-size(16px, 26px);
+        }
+    }
+    h2 {
+        @include font-size(17px, 20px);
+        color: $darkblue;
+        font-weight: normal;
+        @include respond-to(desktop) {
+            @include font-size(21px, 32px);
+        }
+    }
+    ul {
+        li {
+            padding-left: 20px; 
+            text-indent: -20px;
+            margin-bottom: 15px;
+            @include respond-to(tablet) {
+                @include font-size(15px, 18px);
+            }
+            @include respond-to(desktop) {
+                @include font-size(16px, 22px);
+            }
+            &:before {
+                content: '';
+                width: 6px;
+                height: 6px;
+                background: $darkblue; 
+            }
+        }
+    }
+}

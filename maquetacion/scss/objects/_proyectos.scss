@@ -1,0 +1,508 @@
+/*------------------------------------*\
+$PROYECTOS
+\*------------------------------------*/
+.no-touch {
+    .item {
+        &:hover {
+            .item__content {
+                bottom: 50%;
+                opacity: 1;
+                transform: translate(0, 50%);
+            }
+        }
+        .item__content {
+            transition: all 500ms;
+            opacity: 0;
+        }
+    }
+    .share {
+        li {
+            &:hover {
+                svg {
+                    fill: $main;
+                }
+            }
+            svg {
+                transition: all 300ms;
+            }
+        }
+    }
+    .slider .flex-direction-nav svg {
+        transition: all 300ms;
+        &:hover {
+            fill: $main;
+        }
+    }
+    .single.single--proyecto .single__category a {
+        transition: all 300ms;
+        &:hover {
+            color: $darkbluehover;
+        }
+    }
+    .related {
+        .related__content {
+            .related__item {
+                &:hover {
+                    .related__text {
+                        bottom: 50%;
+                        opacity: 1;
+                        transform: translate(-50%, 50%);
+                    }
+                }
+                .related__text {
+                    top: auto;
+                    bottom: 0;
+                }
+            }
+        }
+    }
+}
+.title--single {
+    color: $darkblue;
+}
+.select-filtros {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: transparent;
+    -webkit-appearance: none;
+    @include font-size(13px, 36px);
+    padding: 0 10px;
+    border: none;
+    text-transform: uppercase;
+}
+.filtros--text, .style-select {
+    background: url(../img/combo.svg) right 10px center no-repeat $principal10;
+    width: 280px;
+    height: 36px;
+    margin: auto;
+    @include font-size(13px, 36px);
+    color: $gray;
+    text-transform: uppercase;
+    position: relative;
+    padding: 0 10px;
+    @include respond-to(desktop) {
+        display: none;
+    }
+}
+.filtros {
+    background: $principal10;
+    width: 280px;
+    display: none;
+    margin: auto;
+    &::after, &::before {
+        display: none;
+    }
+    @include respond-to(desktop) {
+        display: flex;
+        flex-flow: row wrap;
+        width: auto;
+        justify-content: center;
+        background: white;
+        &::after, &::before {
+            display: block;
+            top: -4px;
+            height: 24px;
+            background-size: 16px 24px;
+            width: 16px;
+        }
+    }
+    li {
+        width: 100%;
+        height: 36px;
+        text-transform: uppercase;
+        padding: 0 10px;
+        @include respond-to(tablet) {
+            @include font-size(13px, 16px);
+        }
+        @include respond-to(desktop) {
+            width: auto;
+            height: auto;
+        }
+        &.active {
+            a {
+                color: $darkblue;
+            }
+        }
+        a {
+            letter-spacing: .8px;
+            color: $gray;
+            @include font-size(13px, 36px);
+            @include respond-to(desktop) {
+                @include font-size(13px, 16px);
+            }
+        }
+    }
+}
+.projects {
+    .content {
+        padding-bottom: 20px;
+        @include respond-to(desktop) {
+            padding-bottom: 23px;
+        }
+        .title {
+            margin-top: 0;
+            @include respond-to(tablet) {
+                margin-bottom: 5px;
+            }
+            @include respond-to(desktop) {
+                margin-bottom: 25px;
+                margin-top: -6px;
+            }
+        }
+    }
+}
+.proyectos {
+    &.inside {
+        margin-top: 13px;
+        @include respond-to(tablet) {
+            margin-top: 21px;
+        }
+        @include respond-to(desktop) {
+            margin-top: 23px;
+        }
+    }
+    .btn {
+        margin: auto;
+        width: 200px;
+        height: 48px;
+        @include font-size(16px, 48px);
+        text-align: center;
+        margin-top: 20px;
+        background: $main;
+        @include respond-to(tablet) {
+            margin-top: 15px;
+        }
+        @include respond-to(desktop) {
+            margin-top: 40px;
+        }
+    }
+}
+.slider {
+    width: calc(100% - 4px);
+    margin: auto;
+    position: relative;
+    background: rgba($gray, .2);
+    @include respond-to(desktop) {
+        width: calc(100% - 8px);
+    }
+    .slides {
+        li {
+            height: 320px;
+            display: flex !important;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            @include respond-to(tablet) {
+                height: 420px;
+            }
+            @include respond-to(desktop) {
+                height: 700px;
+            }
+        }
+    }
+    .gallery__controls__content {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        padding: 10px;
+        display: flex;
+        flex-flow: row wrap; 
+        background: rgba($darkblue, .9);
+        z-index: $level2;
+        .gallery__number {
+            @include font-size(18px, 32px);
+            color: white;
+        }
+        .flex-direction-nav {
+            display: flex;
+            flex-flow: row wrap; 
+        }
+        li {
+            margin-left: 25px;
+            cursor: pointer;
+        }
+        svg {
+            width: 28px;
+            height: 32px;
+            fill: white;
+        }
+    }
+}
+.share--box {
+    @include respond-to(tablet) {
+        display: flex;
+        justify-content: center;
+        width: calc(100% - 30px);
+        margin: 0 auto ;
+        padding-top: 10px;
+        border-top: 1px solid rgba(#5d6268, .2);
+    }
+    @include respond-to(desktop) {
+        width: calc(100% - 8px);
+    }
+    &.share--right {
+        @include respond-to(tablet) {
+            justify-content: flex-end;
+        }
+    }
+    .share--text {
+        @include respond-to(tablet) {
+            line-height: cr(32px);
+            margin: 0;
+        }
+    }
+    .share {
+        @include respond-to(tablet) {
+            margin: 0 0 15px 10px;
+        }
+    }
+}
+.share {
+    display: flex;
+    flex-flow: row wrap;
+    width: 208px;
+    margin: 12px auto 10px;
+    justify-content: space-between;
+    align-items: center;
+    height: 32px;
+    padding: 0 15px;
+    @include respond-to(tablet) {
+        margin: 0 auto 15px;
+        width: 178px;
+    }
+    &.brackets {
+        &::after, &::before {
+            background-size: 8px 32px;
+            height: 32px;
+        }
+    }
+    li {
+        padding: 0 !important;
+        margin: 0 !important;
+        &::before {
+            display: none;
+        }
+        &:last-child {
+            @include respond-to(tablet) {
+                display: none;
+            }
+        }
+    }
+    a, svg {
+        max-width: 16px;
+        max-height: 13px;
+        display: block;
+    }
+    svg {
+        fill: rgba($gray, .5);
+    }
+}
+.share--text {
+    text-align: center;
+    @include font-size(14px, 15px);
+    margin: 15px 0 10px;
+}
+.description {
+    @include respond-to(tablet) {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: center;
+        margin-bottom: 10px;
+    }
+    @include respond-to(wide) {
+        padding: 10px 55px;
+    }
+    .description__item {
+        padding: 10px 0;
+        border-top: 1px solid rgba($principal, .3);
+        @include font-size(13px, 15px);
+        @include respond-to(tablet) {
+            padding: 10px 7px;
+            width: 25%;
+            border-top: none;
+            &:nth-child(-n + 4) {
+                border-bottom: 1px solid rgba($principal, .3);
+            }
+            &:nth-child(4n + 1) {
+                padding: 10px 0;
+            }
+        }
+        @include respond-to(wide) {
+            width: (100% / 6);
+            border-left: 1px solid rgba($principal, .3);
+            padding: 0 10px;
+            &:nth-child(-n + 4) {
+                border-bottom: none;
+            }
+            &:nth-child(4n + 1) {
+                padding: 0 0 0 10px;
+            }
+            &:first-child {
+                border-left: none;
+                padding-left: 0;
+            }
+        }
+        &:first-child {
+            border-top: none;
+        }
+        .description__title {
+            @include font-size(13px, 15px);
+            text-transform: uppercase;
+            color: $darkblue;
+        }
+    }
+}
+.related {
+    margin-top: 15px;
+    @include respond-to(tablet) {
+        margin-top: 17px;
+    }
+    @include respond-to(desktop) {
+        margin-top: 47px;
+    }
+    .wrap {
+        max-width: 100%;
+        @include respond-to(tablet) {
+            padding: 0 2px;
+        }
+    }
+    .sub-title {
+        text-transform: uppercase;
+        color: $darkblue;
+        @include font-size(17px, 39px);
+        font-weight: normal;
+        @include respond-to(tablet) {
+            text-align: center;
+            margin: 15px 0 4px 0;
+            @include font-size(18px, 48px);
+        }
+        @include respond-to(desktop) {
+            @include font-size(22px, 48px);
+            margin-bottom: 14px;
+        }
+    }
+    .related__content {
+        @include respond-to(tablet) {
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: center;
+        }
+        .related__item {
+            width: 100%;
+            display: flex;
+            flex-flow: row wrap;
+            padding: 10px 0;
+            transition-property: prop;
+            @include respond-to(tablet) {
+                width: 25%;
+                padding: 2px;
+                display: block;
+            }
+            @include respond-to(desktop) {
+                position: relative;
+                &:hover {
+                    .related__text {
+                        opacity: 1;
+                    }
+                }
+            }
+            .related__image {
+                width: 48px;
+                height: 48px;
+                overflow: hidden;
+                position: relative;
+                @include respond-to(tablet) {
+                    width: 100%;
+                    height: auto;
+                    display: block;
+                }
+                img {
+                    min-height: 100%;
+                    min-width: 100%;
+                    max-width: 70px;
+                    @include center;
+                    @include respond-to(tablet) {
+                        max-width: 100%;
+                        min-height: 10px;
+                        position: relative;
+                        top: auto;
+                        left: auto;
+                        transform: translate(0, 0);
+                    }
+                }
+            }
+            .related__text {
+                flex: 1;
+                padding-left: 5px;
+                color: $principal;
+                @include font-size(13px, 16px);
+                margin-top: -3px;
+                @include respond-to(tablet) {
+                    margin-top: 1px;
+                    padding-right: 5px;
+                    flex: auto;
+                    display: block;
+                }
+                @include respond-to(desktop) {
+                    @include center;
+                    opacity: 0;
+                    transition: all 300ms;
+                    background: $darkblue;
+                    width: calc(100% - 4px);
+                    color: white;
+                    @include font-size(14px, 16px);
+                    padding: 12px 11px 14px;
+                }
+                .related__title {
+                    @include font-size(15px, 18px);
+                    color: $darkblue;
+                    display: block;
+                    @include respond-to(desktop) {
+                        color: $main;
+                        @include font-size(16px, 18px);
+                        text-transform: uppercase;
+                    }
+                }
+            }
+        }
+    }
+}
+.single {
+    .title {
+        @include respond-to(tablet) {
+            margin: 54px auto 0px;
+        }
+    }
+    &.single--proyecto {
+        .title {
+            margin: 0 0 10px;
+            text-align: left;
+            @include respond-to(tablet) {
+                margin: 0 0 15px;
+                text-align: center;
+            }
+            @include respond-to(desktop) {
+                margin: 0 0 30px;
+            }
+        }
+        .single__category {
+            @include font-size(14px, 16px);
+            text-transform: uppercase;
+            color: #5d6268;
+            margin-top: 30px;
+            @include respond-to(tablet) {
+                margin: 54px auto 0px;
+                text-align: center;
+            }
+            a {
+                color: #5d6268;
+            }
+        }
+    }
+}

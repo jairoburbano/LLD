@@ -1,0 +1,80 @@
+/*------------------------------------*\
+$ERROR
+\*------------------------------------*/
+.no-touch {
+    .error404 .content__404 .buttons__404 .btn {
+        transition: all 300ms;
+        &:hover {
+            background: $darkblue;
+        }
+    }
+}
+.error404 {
+    background: #0f0b03;
+    height: 100%;
+    .content__404 {
+        text-align: center;
+        color: white;
+        width: 100%;
+        padding: 0 20px;
+        max-width: 560px;
+        margin: auto;
+        .logo__404 {
+            margin: auto;
+        }
+        .category__404 {
+            @include font-size(14px, 16px);
+            text-transform: uppercase;
+            margin-top: 35px;
+            margin-bottom: 5px;
+        }
+        .title__404 {
+            @include font-size(22px, 26px);
+            color: $main;
+            margin-bottom: 10px;
+            @extend .light;
+            @include respond-to(tablet) {
+                @include font-size(36px, 46px);
+                margin-bottom: 20px;
+            }
+        }
+        .text__404 {
+            @include font-size(18px, 26px);
+            margin-bottom: 10px;
+            @extend .light;
+            @include respond-to(tablet) {
+                @include font-size(18px, 28px);
+            }
+        }
+        .buttons__404 {
+            @include respond-to(tablet) {
+                display: flex;
+                justify-content: center;
+            }
+            .btn {
+                background: $main;
+                margin: 5px auto;
+                @include respond-to(tablet) {
+                    margin: 10px 15px;
+                }
+            }
+        }
+    }
+    .footer {
+        background: #0f0b03;
+        color: white;
+        @include respond-to(tablet) {
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+        }
+        .column {
+            &.contact--foo {
+                a {
+                    color: white;
+                }
+            }
+        }
+    }
+}

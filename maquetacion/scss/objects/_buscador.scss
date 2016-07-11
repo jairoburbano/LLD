@@ -1,0 +1,172 @@
+/*------------------------------------*\
+$BUSCADOR
+\*------------------------------------*/
+.no-touch {
+    .buscador {
+        .buscador__box {
+            h1 {
+                span {
+                    &:hover {
+                        svg {
+                            fill: $main;
+                        }
+                    }
+                }
+            }
+            .buscador__result__item {
+                transition: all 300ms;
+                &:hover {
+                    .buscador__result__text {
+                        color: #000;
+                    }
+                }
+            }
+        }
+        .icon-close {
+            &:hover {
+                svg {
+                    fill: $principal;
+                }
+            }
+        }
+    }
+}
+.buscador {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: $level11;
+    display: none;
+    background: rgba($darkblue, .9);
+    .buscador__box {
+        width: calc(100% - 20px);
+        height: auto;
+        max-width: 600px;
+        background: white;
+        @include center;
+        .buscador--top {
+            border-bottom: 1px solid rgba($principal, .2);
+            position: relative;
+            padding: 10px 0;
+            &::after {
+                content: '';
+                position: absolute;
+                bottom: -2px;
+                height: 3px;
+                width: 50px;
+                background: $main;
+                right: 0;
+                @include respond-to(tablet) {
+                    width: 124px;
+                }
+            }
+            @include respond-to(tablet) {
+                max-height: 450px;
+                display: flex;
+                align-items: center;
+            }
+        }
+        h1 {
+            @include font-size(21px, 42px);
+            padding: 0 10px;
+            color: $darkblue;
+            font-weight: normal;
+            span {
+                cursor: pointer;
+                display: block;
+                position: absolute;
+                top: 19px;
+                right: 20px;
+                svg {
+                    transition: all 300ms;
+                    width: 24px;
+                    height: 24px;
+                    display: block;
+                    fill: rgba($gray, .5);
+                }
+            }
+        }
+        .buscador--form {
+            width: 100%;
+            @include respond-to(tablet) {
+                width: calc(100% - 150px);
+            }
+            .input-group {
+                position: relative;
+                input {
+                    width: 100%;
+                    height: 42px;
+                    background: $principal10;
+                    border: none;
+                    @include font-size(16px, 42px);
+                    padding: 0 30px 0 10px;
+                    &:focus {
+                        outline: none;
+                    }
+                    &.send {
+                        background: url(../img/search.svg) no-repeat transparent;
+                        background-size: 21px;
+                        background-position: center;
+                        width: 40px;
+                        height: 42px;
+                        position: absolute;
+                        top: 0;
+                        right: 0;
+                        padding: 0;
+                    }
+                }
+            }
+        }
+        .buscador__result {
+            overflow: auto;
+            max-height: 380px;
+            padding:  0 10px;
+            width: 100%;
+            .result__much {
+                @include font-size(18px, 28px);
+                margin-bottom: 10px;
+                display: block;
+                padding-top: 10px;
+            }
+            .buscador__result__item {
+                width: 100%;
+                display: block;
+                display: flex;
+                flex-flow: row wrap;
+                margin: 10px 0;
+                .buscador__result__image {
+                    width: 72px;
+                    height: 72px;
+                    position: relative;
+                    overflow: hidden;
+                    display: block;
+                    img {
+                        max-width: 150px;
+                        min-height: 100%;
+                        min-width: 100%;
+                        @include center;
+                    }
+                }
+                .buscador__result__text {
+                    color: $darkblue;
+                    position: relative;
+                    display: block;
+                    width: calc(100% - 72px);
+                    padding-left: 10px;
+                    font-weight: normal;
+                    transition: all 300ms;
+                    .result__category {
+                        @include font-size(13px, 18px);
+                        display: block;
+                        color: #5d6268;
+                    }
+                    .result__title {
+                        @include font-size(16px, 18px);
+                    }
+                }
+            }
+        }
+    }
+}
